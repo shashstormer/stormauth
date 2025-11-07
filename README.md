@@ -14,7 +14,7 @@ You can check out the [main.py](https://github.com/shashstormer/stormauth/blob/m
 ```bash
 pip install authtuna
 ```
-
+- create a .env file in the dir with main.py and then setup as per instructions on [Authtuna docs](https://authtuna.shashstorm.in).
 ## Running the Application
 
 ```bash

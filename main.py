@@ -5,8 +5,8 @@ from authtuna import init_app, Theme, init_settings, ThemeMode, settings
 from authtuna.integrations import get_current_user_optional
 app = FastAPI()
 new_theme = settings.THEME.dark.model_copy(deep=True)
-new_theme.background_start = "#143497"
-new_theme.background_end = "#000000"
+new_theme.background_start = "#152b72"
+new_theme.background_end = "#081638"
 custom_theme = Theme(
     mode="single", # only light mode vars but just set them to whatever you want they will be used in dark mode also.
     light=new_theme,

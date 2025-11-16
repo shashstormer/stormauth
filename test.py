@@ -1,3 +1,5 @@
+import os
+
 from authtuna.integrations.fastapi_integration import auth_service
 async def add_missing_user_role():
     """
@@ -16,6 +18,10 @@ async def add_missing_user_role():
         if user.username not in roled_unames and user.username != "system":
             await auth_service.roles.assign_to_user(user.id, "User", "system", 'global')
             print("Added user role to : ", user.username)
+
+async def give_superadmin():
+    me = await auth_service.users.get_by_email(os.getenv("EMAIL_FOR_SUPERADMIN"))
+    await auth_service.roles.assign_to_user(me.id, "SuperAdmin", "system", "global")
 
 async def main():
     await add_missing_user_role()
